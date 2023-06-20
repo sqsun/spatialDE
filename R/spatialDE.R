@@ -116,7 +116,7 @@ setMethod("spatialDE", "matrix", .spatialDE)
 #' @export
 #' @rdname spatialDE
 #' @importFrom SummarizedExperiment assay
-#' @importFrom SpatialExperiment spatialCoords spatialCoordsNames<-
+#' @importFrom SpatialExperiment spatialCoords
 setMethod("spatialDE", "SpatialExperiment",
     function(x, assay_type = "counts", verbose = FALSE) {
         ## Rename spatialCoords columns to "x", "y"
