@@ -118,13 +118,13 @@ setMethod("modelSearch", "matrix", .modelSearch)
 #' @export
 #' @rdname modelSearch
 #' @importFrom SummarizedExperiment assay
-#' @importFrom SpatialExperiment spatialCoords spatialCoordsNames<-
+#' @importFrom SpatialExperiment spatialCoords
 setMethod("modelSearch", "SpatialExperiment",
     function(x, de_results, assay_type = "counts",
              qval_thresh = 0.05, verbose = FALSE) {
 
         ## Rename spatialCoords columns to "x", "y"
-        spatialCoordsNames(x) <- c("x", "y")
+        #spatialCoordsNames(x) <- c("x", "y")
         coordinates <- as.data.frame(spatialCoords(x))
 
         .modelSearch(
