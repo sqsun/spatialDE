@@ -228,13 +228,13 @@ setMethod("multiGenePlots", "matrix", .multiGenePlots)
 #' @export
 #' @rdname multiGenePlots
 #' @importFrom SummarizedExperiment assay
-#' @importFrom SpatialExperiment spatialCoords spatialCoordsNames
+#' @importFrom SpatialExperiment spatialCoords
 #' @importFrom basilisk basiliskStart basiliskRun
 setMethod("multiGenePlots", "SpatialExperiment",
     function(x, assay_type = "counts", genes_plot, viridis_option = "D",
              ncol = 2, point_size = 1, dark_theme = TRUE) {
         ## Rename spatialCoords columns to "x", "y"
-        spatialCoordsNames(x) <- c("x", "y")
+        #spatialCoordsNames(x) <- c("x", "y")
         coordinates <- as.data.frame(spatialCoords(x))
 
         proc <- basiliskStart(spatialDE_env, testload="scipy.optimize")
