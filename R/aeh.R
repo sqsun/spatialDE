@@ -141,14 +141,14 @@ setMethod("spatialPatterns", "matrix", .spatialPatterns)
 #' @export
 #' @rdname spatialPatterns
 #' @importFrom SummarizedExperiment assay
-#' @importFrom SpatialExperiment spatialCoords spatialCoordsNames<-
+#' @importFrom SpatialExperiment spatialCoords
 setMethod("spatialPatterns", "SpatialExperiment",
     function(x, de_results, qval_thresh = 0.05,
              n_patterns, length,
              assay_type = "counts", verbose = FALSE) {
 
         ## Rename spatialCoords columns to "x", "y"
-        spatialCoordsNames(x) <- c("x", "y")
+        #spatialCoordsNames(x) <- c("x", "y")
         coordinates <- as.data.frame(spatialCoords(x))
 
         .spatialPatterns(
